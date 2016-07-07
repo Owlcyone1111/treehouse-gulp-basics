@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hdngr/treehouse-gulp-course",
   "devDependencies": {
+    "del": "^2.2.1",
     "gulp": "^3.8.11",
     "gulp-concat": "^2.6.0",
     "gulp-rename": "^1.2.2",
