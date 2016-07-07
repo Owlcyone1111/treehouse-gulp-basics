@@ -1,62 +1,6 @@
 "use strict";
 
 var gulp = require('gulp'),
-<<<<<<< HEAD
-  concat = require('gulp-concat'),
-  uglify = require('gulp-uglify'),
-  rename = require('gulp-rename'),
-    sass = require('gulp-sass'),
-    maps = require('gulp-sourcemaps'),
-     del = require('del');
-
-gulp.task("concatScripts", function() {
-    return gulp.src([
-        'js/jquery.js',
-        'js/sticky/jquery.sticky.js',
-        'js/main.js'
-        ])
-    .pipe(maps.init())
-    .pipe(concat('app.js'))
-    .pipe(maps.write('./'))
-    .pipe(gulp.dest('js'));
-});
-
-gulp.task("minifyScripts", ["concatScripts"], function() {
-  return gulp.src("js/app.js")
-    .pipe(uglify())
-    .pipe(rename('app.min.js'))
-    .pipe(gulp.dest('js'));
-});
-
-gulp.task('compileSass', function() {
-  return gulp.src("scss/application.scss")
-      .pipe(maps.init())
-      .pipe(sass())
-      .pipe(maps.write('./'))
-      .pipe(gulp.dest('css'));
-});
-
-gulp.task('watchFiles', function() {
-  gulp.watch('scss/**/*.scss', ['compileSass']);
-  gulp.watch('js/main.js', ['concatScripts']);
-})
-
-gulp.task('clean', function() {
-  del(['dist', 'css/application.css*', 'js/app*.js*']);
-});
-
-gulp.task("build", ['minifyScripts', 'compileSass'], function() {
-  return gulp.src(["css/application.css", "js/app.min.js", 'index.html',
-                   "img/**", "fonts/**"], { base: './'})
-            .pipe(gulp.dest('dist'));
-});
-
-gulp.task('serve', ['watchFiles']);
-
-gulp.task("default", ["clean"], function() {
-  gulp.start('build');
-});
-=======
 	concat = require('gulp-concat'), // To concat all the needed scripts
 	uglify = require('gulp-uglify'), // To minify
 	rename = require('gulp-rename'), // For rename function to work when minifying
@@ -96,15 +40,15 @@ gulp.task('compileSass', function() {
 
 gulp.task('watchFiles', function() {
 	gulp.watch('scss/**/*.scss', ['compileSass']); // Globbing pattern, look in scss folder, all subdirectories, and all files with .scss extension
-	gulp.watch('js/main.js', ['concatScripts']); // Watch main.js for changes and run concatScripts task when changed 
+	gulp.watch('js/main.js', ['concatScripts']); // Watch main.js for changes and run concatScripts task when changed
 });
 
 // Gulp runs tasks concurrently at the same time, but we need concat before minify, so add dependency between concat and minify and return statements for tasks that depend on them, to run tasks serially. 'base' keeps the directory structure, otherwise it will dump all production files into 'dist' folder
 gulp.task("build", ['concatScripts', 'minifyScripts', 'compileSass'], function() {
-	return gulp.src(["css/application.css", 
-		"js/app.min.js", 
-		"index.html", 
-		"img/**", 
+	return gulp.src(["css/application.css",
+		"js/app.min.js",
+		"index.html",
+		"img/**",
 		"fonts/**"], { base: './' })
 	.pipe(gulp.dest('dist'));
 });
@@ -120,4 +64,3 @@ gulp.task('serve', ['watchFiles']); // Initiates watchFiles task whenever we use
 gulp.task("default", ['clean', 'hello'], function() {
 	gulp.start('build'); // Added clean as dependency, so build will run after clean has finished
 });
->>>>>>> Stage1Video4
