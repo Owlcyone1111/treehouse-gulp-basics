@@ -17,7 +17,7 @@ h2 {
   font-size: 3.3125em;
   line-height: 1.1;
   font-weight: normal;
-  margin: 0 0 0.5em; }
+  margin: 0 0 .5em; }
 
 h3 {
   font-size: 1.25em;
@@ -51,9 +51,7 @@ a:hover {
 .main-header {
   padding-top: 170px;
   height: 850px;
-
-  background: linear-gradient(green, transparent 90%), linear-gradient(0deg, #fff, transparent), green url("../img/mountains.jpg") no-repeat center;
-
+  background: linear-gradient(#ffa949, transparent 90%), linear-gradient(0deg, #fff, transparent), #ffa949 url("../img/mountains.jpg") no-repeat center;
   background-size: cover; }
   @media (max-width: 768px) {
     .main-header {
@@ -183,6 +181,5 @@ a:hover {
   @media (max-width: 768px) {
     .arrow {
       display: none; } }
-
 
 /*# sourceMappingURL=application.css.map */

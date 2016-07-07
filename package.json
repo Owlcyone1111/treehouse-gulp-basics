@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/hdngr/treehouse-gulp-course",
   "devDependencies": {
+<<<<<<< HEAD
     "del": "^1.2.0",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.5.2",
@@ -24,5 +25,14 @@
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0"
+=======
+    "del": "^2.2.1",
+    "gulp": "^3.8.11",
+    "gulp-concat": "^2.6.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.5.4"
+>>>>>>> Stage1Video4
   }
 }
